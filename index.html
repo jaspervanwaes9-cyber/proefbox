@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gratis proefbox voor bio- en hoevewinkels | Bio Bakkerij De Trog</title>
+<meta name="description" content="Vraag een gratis proefbox aan van Bio Bakkerij De Trog: ambachtelijk bio-desembrood uit Ieper, geleverd vóór je winkel opent.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout: full-width kleurbanden (groene hero, witte proefbox, groen formulier) met één kolom,
+     voordelen als rijen met lijnen. */
+  :root{
+    --bg:#F3F5EF; --surface:#FFFFFF; --ink:#1C1F1B; --muted:#565B52; --line:#D6D9CE;
+    --band:#1E3B2C; --band-ink:#FFFFFF; --band-muted:#D3DACF; --band-soft:#2F5A43;
+    --wheat:#E3A93B; --wheat-hover:#F0BC57; --wheat-ink:#1D1A16; --accent-text:#7A4318;
+    --btn:#1E3B2C; --btn-hover:#2F5A43; --btn-ink:#FFFFFF;
+    --field:#FFFFFF; --field-line:#9AA08F; --err:#A32A1A; --ok:#2F6B45;
+    --font-display:Bitter,Georgia,serif; --font-body:"Public Sans",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#101612; --surface:#1A231D; --ink:#E9EDE4; --muted:#A3AA9B; --line:#2E3A31;
+      --band:#0D1C14; --band-soft:#25493A; --accent-text:#E3A93B;
+      --btn:#E3A93B; --btn-hover:#F0BC57; --btn-ink:#1D1A16;
+      --field:#121A15; --field-line:#5E6B5E; --err:#FF8A78; --ok:#7FD39A;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#101612; --surface:#1A231D; --ink:#E9EDE4; --muted:#A3AA9B; --line:#2E3A31;
+    --band:#0D1C14; --band-soft:#25493A; --accent-text:#E3A93B;
+    --btn:#E3A93B; --btn-hover:#F0BC57; --btn-ink:#1D1A16;
+    --field:#121A15; --field-line:#5E6B5E; --err:#FF8A78; --ok:#7FD39A;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  [hidden]{display:none!important}
+  img{max-width:100%}
+  body{font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg)}
+  h1,h2,h3{font-family:var(--font-display);line-height:1.15;margin:0;text-wrap:balance}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--wheat);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+  .top{background:var(--band);color:var(--band-ink)}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:16px;flex-wrap:wrap}
+  .brand{font-family:var(--font-display);font-weight:800;font-size:1.25rem;text-decoration:none}
+  .brand small{display:block;font-family:var(--font-body);font-weight:400;font-size:.75rem;opacity:.8}
+  .top nav{display:flex;gap:18px;align-items:center;font-size:.95rem}
+  .top nav a,.top nav button{color:inherit;background:none;border:0;font:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+
+  .hero{background:var(--band);color:var(--band-ink)}
+  .hero .wrap{padding-top:36px;padding-bottom:64px}
+  .hero h1{font-size:clamp(2.1rem,7vw,3.9rem);font-weight:800;max-width:15ch}
+  .hero p.lead{font-size:1.15rem;max-width:34em;margin:20px 0 28px;color:var(--band-muted)}
+  .btn{display:inline-block;background:var(--wheat);color:var(--wheat-ink);font-weight:600;font-size:1.05rem;padding:15px 26px;border-radius:6px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{background:var(--wheat-hover)}
+  .hero .sub{display:block;margin-top:12px;font-size:.92rem;color:var(--band-muted)}
+  .night{margin-top:48px}
+  .night h2{font-size:1rem;font-family:var(--font-body);font-weight:500;color:var(--band-muted);margin-bottom:10px}
+  .bar{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--band-soft)}
+  .bar span:nth-child(1){flex:5;background:#6D8F78}
+  .bar span:nth-child(2){flex:3;background:var(--wheat)}
+  .bar span:nth-child(3){flex:2;background:#fff}
+  .bar-labels{display:flex;margin-top:10px;font-size:.88rem;line-height:1.35}
+  .bar-labels div:nth-child(1){flex:5;padding-right:10px}
+  .bar-labels div:nth-child(2){flex:3;padding-right:10px}
+  .bar-labels div:nth-child(3){flex:2}
+  .bar-labels b{display:block;font-weight:600;color:var(--band-ink)}
+
+  section .wrap{padding-block:64px}
+  section h2{font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:800;max-width:20ch}
+  .intro{color:var(--muted);max-width:38em;margin:14px 0 0}
+  .benefits{margin-top:36px;border-top:2px solid var(--ink)}
+  .benefit{display:grid;gap:8px 32px;padding:26px 0;border-bottom:1px solid var(--line)}
+  .benefit>*{min-width:0}
+  .benefit h3{font-size:1.3rem;font-weight:600}
+  .benefit p{margin:0;max-width:40em}
+  .benefit .fact{font-size:.92rem;color:var(--accent-text);font-weight:600;margin-top:6px}
+  @media (min-width:760px){.benefit{grid-template-columns:5fr 7fr;align-items:start}.benefit .fact{grid-column:2}}
+
+  .box{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .box .cols{display:grid;gap:40px;margin-top:32px}
+  .box .cols>*{min-width:0}
+  @media (min-width:760px){.box .cols{grid-template-columns:1fr 1fr}}
+  .box h3{font-size:1.2rem;margin-bottom:12px}
+  .box ul{margin:0;padding-left:1.1em}
+  .box li{margin-bottom:8px}
+  .steps{margin:0;padding:0;list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding:0 0 18px 48px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:34px;height:34px;border-radius:50%;background:var(--band);color:var(--band-ink);font-weight:600;display:grid;place-items:center}
+  .steps li:not(:last-child)::after{content:"";position:absolute;left:16px;top:34px;bottom:2px;width:2px;background:var(--line)}
+  .steps b{display:block}
+  .note{font-size:.92rem;color:var(--muted);margin-top:18px}
+
+  .form-wrap{background:var(--band);color:var(--band-ink)}
+  .form-wrap h2{max-width:none}
+  .form-wrap .intro{color:var(--band-muted)}
+  form{margin-top:30px;background:var(--surface);color:var(--ink);padding:28px;border-radius:10px;display:grid;gap:18px}
+  @media (min-width:700px){form{padding:36px;grid-template-columns:1fr 1fr}.full{grid-column:1/-1}}
+  form>*{min-width:0}
+  label{font-weight:600;font-size:.95rem;display:block;margin-bottom:6px}
+  label .opt{font-weight:400;color:var(--muted)}
+  input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--field-line);border-radius:6px;background:var(--field);color:var(--ink)}
+  input:focus,select:focus{border-color:var(--wheat);outline:3px solid var(--wheat);outline-offset:1px}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;font-weight:400}
+  .check input{margin-top:4px;width:18px;height:18px;flex:none}
+  .hp{position:absolute;left:-9999px;height:0;width:0;overflow:hidden}
+  .submit{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .submit .btn{background:var(--btn);color:var(--btn-ink)}
+  .submit .btn:hover{background:var(--btn-hover)}
+  .submit .btn[disabled]{opacity:.6;cursor:wait}
+  .status{font-size:.95rem}
+  .status.err{color:var(--err);font-weight:600}
+  .done{margin-top:30px;background:var(--surface);color:var(--ink);padding:32px;border-radius:10px}
+  .done h3{font-size:1.5rem;margin-bottom:10px}
+
+  .about p{max-width:40em}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+  .btn.line{background:transparent;border:2px solid var(--ink);color:var(--ink);padding:12px 22px}
+  .btn.line:hover{background:var(--ink);color:var(--bg)}
+  footer{background:var(--band);color:var(--band-muted);font-size:.92rem}
+  footer .wrap{display:grid;gap:18px;padding-block:36px}
+  @media (min-width:700px){footer .wrap{grid-template-columns:1fr auto}}
+  footer a{color:var(--band-ink)}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://www.detrog.be/nl" target="_blank" rel="noopener">De Trog<small>Bio Bakkerij, Ieper</small></a>
+    <nav aria-label="Navigatie">
+      <a href="https://www.detrog.be/nl" target="_blank" rel="noopener">detrog.be</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <h1>Wij nemen de tijd. Jij houdt je vaste klanten.</h1>
+    <p class="lead">Ambachtelijk bio-desembrood uit Ieper, bij jou aan de deur vóór je winkel opent. Proef het zelf met een gratis proefbox.</p>
+    <a class="btn" href="#aanvragen" id="cta">Vraag je gratis proefbox aan</a>
+    <span class="sub">Voor bio- en hoevewinkels in West- en Oost-Vlaanderen. Aanvragen duurt een minuut.</span>
+
+    <div class="night" role="group" aria-label="Zo komt ons brood bij jou: het deeg rust, wij leveren tussen 3 en 9 uur, jij opent">
+      <h2>Zo komt het brood bij jou</h2>
+      <div class="bar" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="bar-labels">
+        <div><b>Het deeg rust</b>Soms meer dan 24 uur</div>
+        <div><b>Wij leveren</b>Tussen 3u en 9u</div>
+        <div><b>Jij opent</b>Rek vol</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="voordelen">
+  <div class="wrap">
+    <h2>Waarom winkels zoals die van jou voor De Trog kiezen</h2>
+    <p class="intro">Je klanten kopen bio omdat ze ergens in geloven. Je brood moet daar bij passen.</p>
+    <div class="benefits">
+      <div class="benefit">
+        <h3>Brood waar klanten om terugkomen</h3>
+        <p>Onze desem Henri is zo'n 40 jaar oud en zit in al onze desembroden. We gebruiken bijna uitsluitend steengemalen meel, geen broodverbeteraars en laten het deeg de tijd die het nodig heeft.</p>
+        <div class="fact">Onze enige verbeteraar is tijd.</div>
+      </div>
+      <div class="benefit">
+        <h3>Vers aan je deur, ook als je er niet bent</h3>
+        <p>Onze broodrondes rijden elke dag tussen 3u en 9u. Met een toegangscode of sleutel staat het brood klaar als jij opent. Je hoeft niet te bakken en niet op te blijven.</p>
+        <div class="fact">Minimum €85 per levering in Vlaanderen en Brussel.</div>
+      </div>
+      <div class="benefit">
+        <h3>Minder brood in de vuilbak</h3>
+        <p>Naast dagvers brood hebben we Pur Pain: zuurstofarm verpakt, bij levering nog zo'n 21 dagen houdbaar en met een korte afbaktijd. Dat houdt je rek ook 's middags nog vol, zonder dat je de rest moet weggooien.</p>
+        <div class="fact">Vers voor de ochtend, Pur Pain voor de namiddag.</div>
+      </div>
+      <div class="benefit">
+        <h3>Een bakker met een verhaal dat je kunt vertellen</h3>
+        <p>Alles is biologisch en het grootste deel van het brood wordt met de hand gevormd. De bakkerij produceert sinds 2019 CO₂-neutraal en bakt zeven dagen op zeven. Dat verhaal vertel je met plezier aan je klanten.</p>
+        <div class="fact">Al sinds de late jaren 70 een bakker met volkoren als vertrekpunt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="box" id="proefbox">
+  <div class="wrap">
+    <h2>Wat zit er in je proefbox?</h2>
+    <div class="cols">
+      <div>
+        <h3>In de box</h3>
+        <ul>
+          <li>Een selectie verse broden uit ons assortiment</li>
+          <li>Pur Pain-broden om te proeven en af te bakken</li>
+          <li>Een overzicht met prijzen en je winstmarge</li>
+          <li>Rekkaartjes voor je broodwand</li>
+        </ul>
+        <p class="note">Je ontvangt de box gratis en vrijblijvend. We brengen hem persoonlijk langs.</p>
+      </div>
+      <div>
+        <h3>Zo gaat het verder</h3>
+        <ol class="steps">
+          <li><b>Je vraagt de box aan</b>Vul hieronder je gegevens in.</li>
+          <li><b>Wij brengen hem langs</b>We spreken met je af wanneer het past.</li>
+          <li><b>Jij proeft en beslist</b>We bellen daarna even om te horen wat je ervan vond.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-wrap" id="aanvragen">
+  <div class="wrap">
+    <h2>Vraag je gratis proefbox aan</h2>
+    <p class="intro">Vertel ons waar we de box naartoe mogen brengen. Meer hebben we niet nodig.</p>
+
+    <form id="boxform" novalidate>
+      <div class="hp" aria-hidden="true"><label for="website">Laat dit leeg</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="full">
+        <label for="winkel">Naam van je winkel</label>
+        <input id="winkel" name="winkel" type="text" required autocomplete="organization">
+      </div>
+      <div>
+        <label for="soort">Soort winkel</label>
+        <select id="soort" name="soort" required>
+          <option value="">Kies…</option>
+          <option>Biowinkel</option>
+          <option>Hoevewinkel</option>
+          <option>Andere</option>
+        </select>
+      </div>
+      <div>
+        <label for="naam">Jouw naam</label>
+        <input id="naam" name="naam" type="text" required autocomplete="name">
+      </div>
+      <div>
+        <label for="email">E-mailadres</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div>
+        <label for="tel">Telefoonnummer</label>
+        <input id="tel" name="telefoon" type="tel" required autocomplete="tel">
+      </div>
+      <div class="full">
+        <label for="straat">Straat en nummer van de winkel</label>
+        <input id="straat" name="straat" type="text" required autocomplete="street-address">
+      </div>
+      <div>
+        <label for="postcode">Postcode</label>
+        <input id="postcode" name="postcode" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required autocomplete="postal-code">
+      </div>
+      <div>
+        <label for="gemeente">Gemeente</label>
+        <input id="gemeente" name="gemeente" type="text" required autocomplete="address-level2">
+      </div>
+      <div class="full">
+        <label for="bakker">Welke bakker levert je brood nu? <span class="opt">(mag leeg blijven)</span></label>
+        <input id="bakker" name="huidige_bakker" type="text">
+      </div>
+      <div class="full">
+        <label class="check" for="akkoord">
+          <input id="akkoord" name="akkoord" type="checkbox" required>
+          <span>Ik ga ermee akkoord dat Bio Bakkerij De Trog mij contacteert over deze proefbox. Lees het <a href="https://www.detrog.be/nl/privacy-policy" target="_blank" rel="noopener">privacybeleid</a>.</span>
+        </label>
+      </div>
+      <div class="full submit">
+        <button class="btn" type="submit" id="send">Vraag mijn gratis proefbox aan</button>
+        <span class="status" id="status" role="status" aria-live="polite"></span>
+      </div>
+    </form>
+
+    <div class="done" id="done" hidden tabindex="-1">
+      <h3>Bedankt, je aanvraag is binnen.</h3>
+      <p>We nemen snel contact met je op om af te spreken wanneer we je proefbox kunnen langsbrengen.</p>
+      <p>Wil je ondertussen al rondneuzen? <a href="https://www.detrog.be/nl/assortiment" target="_blank" rel="noopener">Bekijk ons assortiment</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <h2>Meer weten over De Trog?</h2>
+    <p>Bio Bakkerij De Trog bakt in Ieper onder leiding van meesterbakker Hendrik Durnez. Op onze website lees je het volledige verhaal en zie je alle broden.</p>
+    <div class="links">
+      <a class="btn line" href="https://www.detrog.be/nl" target="_blank" rel="noopener">Naar detrog.be</a>
+      <a class="btn line" href="https://www.detrog.be/nl/assortiment" target="_blank" rel="noopener">Bekijk het assortiment</a>
+      <a class="btn line" href="https://www.detrog.be/nl/ons-verhaal" target="_blank" rel="noopener">Ons verhaal</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>Bio Bakkerij De Trog BV</strong><br>
+      Rozendaalstraat 65, 8900 Ieper<br>
+      <a href="tel:+3257485419">+32 (0)57 48 54 19</a> · <a href="mailto:info@detrog.be">info@detrog.be</a>
+    </div>
+    <div><a href="https://www.detrog.be/nl/privacy-policy" target="_blank" rel="noopener">Privacybeleid</a></div>
+  </div>
+</footer>
+
+<script>
+/* ==================================================================
+   INSTELLINGEN. Plak hier het blok dat het Google Apps Script teruggeeft.
+   Zolang formId leeg is, toont het formulier een melding en verstuurt het niets.
+   ================================================================== */
+var CONFIG = {
+  formId: "1FAIpQLSfKQ0fYY-lgLDQBlnHgzwfW1bWQwBywtseCeXeu0KApER8IoA",
+  entries: {
+    bron: "entry.1291941356",
+    winkel: "entry.1028593199",
+    soort: "entry.1032070406",
+    naam: "entry.1425932490",
+    email: "entry.969624769",
+    telefoon: "entry.1829457287",
+    straat: "entry.1582988978",
+    postcode: "entry.2050979890",
+    gemeente: "entry.732860727",
+    huidige_bakker: "entry.101902603",
+    akkoord: "entry.1186560749"
+  },
+  akkoordTekst: "Ja, ik ga akkoord",
+  // Optioneel: bezoekers per kanaal tellen met Plausible (cookieloos). Leeg = uit.
+  plausibleDomain: ""
+};
+
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function clean(v){ return (v||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,40); }
+
+  /* kanaal uit de link: ?utm_source=flyer of ?utm_source=facebook */
+  var q = new URLSearchParams(location.search);
+  var bron = clean(q.get("utm_source") || q.get("src")) || "direct";
+
+  /* optionele bezoekersmeting */
+  window.plausible = window.plausible || function(){ (window.plausible.q = window.plausible.q || []).push(arguments); };
+  if (CONFIG.plausibleDomain) {
+    var s = document.createElement("script");
+    s.defer = true; s.src = "https://plausible.io/js/script.tagged-events.js";
+    s.setAttribute("data-domain", CONFIG.plausibleDomain);
+    document.head.appendChild(s);
+  }
+
+  $("cta").addEventListener("click", function(e){ e.preventDefault(); $("aanvragen").scrollIntoView({behavior:"smooth"}); });
+
+  var form = $("boxform"), status = $("status"), send = $("send"), done = $("done");
+  function fail(msg){ status.className = "status err"; status.textContent = msg; send.disabled = false; }
+  function configured(){
+    if (!CONFIG.formId) return false;
+    return Object.keys(CONFIG.entries).every(function(k){ return /^entry\.\d+$/.test(CONFIG.entries[k]); });
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    status.className = "status"; status.textContent = "";
+    if ($("website").value) return;                       /* honeypot: bots vullen dit veld in */
+    if (!form.checkValidity()) { form.reportValidity(); return fail("Controleer de gemarkeerde velden en probeer opnieuw."); }
+    if (!configured()) return fail("Het formulier is nog niet gekoppeld aan Google Forms. Zie de handleiding.");
+    send.disabled = true; status.textContent = "Bezig met versturen…";
+
+    var f = form.elements, E = CONFIG.entries, body = new URLSearchParams();
+    body.append(E.bron, bron);
+    body.append(E.winkel, f.winkel.value.trim());
+    body.append(E.soort, f.soort.value);
+    body.append(E.naam, f.naam.value.trim());
+    body.append(E.email, f.email.value.trim());
+    body.append(E.telefoon, f.telefoon.value.trim());
+    body.append(E.straat, f.straat.value.trim());
+    body.append(E.postcode, f.postcode.value.trim());
+    body.append(E.gemeente, f.gemeente.value.trim());
+    if (f.huidige_bakker.value.trim()) body.append(E.huidige_bakker, f.huidige_bakker.value.trim());
+    body.append(E.akkoord, CONFIG.akkoordTekst);
+
+    /* Google Forms geeft geen leesbaar antwoord terug (no-cors). Een mislukte verbinding wel. */
+    fetch("https://docs.google.com/forms/d/e/" + CONFIG.formId + "/formResponse", {
+      method: "POST", mode: "no-cors",
+      headers: {"Content-Type": "application/x-www-form-urlencoded"},
+      body: body.toString()
+    }).then(function(){
+      form.hidden = true; done.hidden = false; done.focus();
+      done.scrollIntoView({behavior:"smooth", block:"center"});
+      try { window.plausible("box-aanvraag", {props:{bron: bron}}); } catch(err){}
+    }).catch(function(){
+      fail("Versturen is niet gelukt. Controleer je verbinding of mail naar info@detrog.be.");
+    });
+  });
+})();
+</script>
+</body>
+</html>
